@@ -14,9 +14,8 @@ namespace DonationCore.UseCases
             _getProjects = gatewayGetProjects;
         }
 
-        public IEnumerable<Project> GetAllProjects() 
-        {
-            return _getProjects.GetProjects();
-        }
+        public IEnumerable<Project> GetAllProjects() => _getProjects.GetProjects();
+
+        public Project GetProject(long id) => _getProjects.GetProject(id);
     }
 }
