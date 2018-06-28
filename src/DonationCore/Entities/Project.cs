@@ -12,8 +12,17 @@ namespace DonationCore.Entities
 
         public bool IsCollectingDonations { get; private set; } = true;
 
-        IEnumerable<Donation> Donations { get; set; }
+        public IList<Donation> Donations { get; set; }
 
+        //Some wide business logic
         public void CloseDonations() => IsCollectingDonations = false;
+
+        public void CollectDonation(Donation donation) 
+        {
+            if(Donations == null)
+                Donations = new List<Donation>();
+            
+            Donations.Add(donation);
+        }
     }
 }
